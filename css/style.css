@@ -5,29 +5,55 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    display: inline-flex;
+    text-align: center;
 }
 
-#container .container_mask {
-    display: inline-flex;
-    position: relative;
+#container>h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container_mask {
+    position: absolute;
     height: 100%;
     width: 100%;
     background-image: url(../img/17-hover-info-box-guitar.jpg);
     background-position: center;
     background-size: cover;
     opacity: 0;
-/*    filter: blur(5px);*/
 }
 
 #container .container_mask_content {
-    position: absolute;
-/*    box-sizing: content-box;*/
-    height: 100%;
-    width: 100%;
+    position: relative;
+    height: 280px;
+    width: 380px;
     left: 0;
     top: 0;
-    margin: auto;
+    margin: 10px;
     background: rgba(14,8,127,0.5);
-    border: 2px solid #fff;
+    border: 1px solid #fff;
+}
+
+#container .container_mask_content_inner {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container_mask::before {
+    content: 'Krzysztof Butkot'
+}
+
+
+.container_mask:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
 }
